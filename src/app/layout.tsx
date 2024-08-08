@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Nav, NavLink } from "@/components/Nav";
+import Image from "next/image";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +20,71 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable
+        )}
+      >
+        <div className="flex">
+          <div className="col-lg-5 bg-primary-bg text-primary-text hidden lg:flex flex-col items-center justify-center">
+            <Link
+              href="/"
+              className="navbar-brand w-full h-auto m-0 p-0 flex flex-col items-center justify-center"
+            >
+              <h1 className="m-0 text-primary uppercase">Hotelier</h1>
+              <Image
+                src=""
+                width={50}
+                height={50}
+                alt="Transparent Logo"
+                className="z-50"
+              />
+            </Link>
+          </div>
+          <div className="w-full flex-col">
+            <div className="row gx-0 bg-white hidden lg:flex lg:justify-between">
+              <div className="col-lg-7 px-5 text-left">
+                <div className="h-full inline-flex items-center py-2 mr-4">
+                  <i className="fa fa-envelope text-primary mr-2"></i>
+                  <p className="mb-0">info@example.com</p>
+                </div>
+                <div className="h-full inline-flex items-center py-2">
+                  <i className="fa fa-phone-alt text-primary mr-2"></i>
+                  <p className="mb-0">+012 345 6789</p>
+                </div>
+              </div>
+              <div className="col-lg-5 px-5 text-right">
+                <div className="inline-flex items-center py-2">
+                  <a className="mr-3" href="">
+                    <i className="fab fa-facebook-f">f</i>
+                  </a>
+                  <a className="mr-3" href="">
+                    <i className="fab fa-twitter">T</i>
+                  </a>
+                  <a className="mr-3" href="">
+                    <i className="fab fa-linkedin-in">L</i>
+                  </a>
+                  <a className="mr-3" href="">
+                    <i className="fab fa-instagram">I</i>
+                  </a>
+                  <a className="" href="">
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <Nav>
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/products">Products</NavLink>
+              <NavLink href="/users">Customers</NavLink>
+              <NavLink href="/orders">Sales</NavLink>
+            </Nav>
+          </div>
+        </div>
+
+        <div className="container my-6">{children}</div>
+      </body>
     </html>
   );
 }
