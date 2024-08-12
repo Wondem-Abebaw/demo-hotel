@@ -1,5 +1,13 @@
-import Image from "next/image";
+// pages/_app.js or pages/_app.tsx
+
+import CarouselComponenet from "@/components/home/carousel";
+import Booking from "@/components/home/booking";
 
 export default function Home() {
-  return <h1>hi</h1>;
+  return (
+    <>
+      <CarouselComponenet />
+      <Booking />
+    </>
+  );
 }

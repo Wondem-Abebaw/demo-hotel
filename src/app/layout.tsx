@@ -3,8 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Nav, NavLink } from "@/components/Nav";
-import Image from "next/image";
+
+import { Facebook, Instagram, Mail, Phone, Send } from "lucide-react";
 import Link from "next/link";
+import { Header } from "./header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -26,55 +28,46 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        <div className="flex">
-          <div className="col-lg-5 bg-primary-bg text-primary-text hidden lg:flex flex-col items-center justify-center">
-            <Link
-              href="/"
-              className="navbar-brand w-full h-auto m-0 p-0 flex flex-col items-center justify-center"
-            >
-              <h1 className="m-0 text-primary uppercase">Hotelier</h1>
-              <Image
-                src=""
-                width={50}
-                height={50}
-                alt="Transparent Logo"
-                className="z-50"
-              />
-            </Link>
-          </div>
+        <div className="sticky top-0 flex flex-col lg:flex-row bg-white z-50">
+          <Header />
+
           <div className="w-full flex-col">
-            <div className="row gx-0 bg-white hidden lg:flex lg:justify-between">
-              <div className="col-lg-7 px-5 text-left">
+            <div className="bg-white hidden lg:flex lg:justify-between">
+              <div className="px-5 text-left flex flex-col lg:flex-row">
                 <div className="h-full inline-flex items-center py-2 mr-4">
-                  <i className="fa fa-envelope text-primary mr-2"></i>
+                  <Mail className="text-primary-text" />
                   <p className="mb-0">info@example.com</p>
                 </div>
                 <div className="h-full inline-flex items-center py-2">
-                  <i className="fa fa-phone-alt text-primary mr-2"></i>
+                  <Phone className="text-primary-text" />
                   <p className="mb-0">+012 345 6789</p>
                 </div>
               </div>
-              <div className="col-lg-5 px-5 text-right">
+              <div className="px-5 text-right hidden lg:flex">
                 <div className="inline-flex items-center py-2">
-                  <a className="mr-3" href="">
-                    <i className="fab fa-facebook-f">f</i>
-                  </a>
-                  <a className="mr-3" href="">
-                    <i className="fab fa-twitter">T</i>
-                  </a>
-                  <a className="mr-3" href="">
-                    <i className="fab fa-linkedin-in">L</i>
-                  </a>
-                  <a className="mr-3" href="">
-                    <i className="fab fa-instagram">I</i>
-                  </a>
-                  <a className="" href="">
-                    <i className="fab fa-youtube"></i>
-                  </a>
+                  <Link
+                    className="mr-3 text-primary-text hover:bg-primary-text hover:text-secondary-text transition-colors duration-300"
+                    href=""
+                  >
+                    <Facebook />
+                  </Link>
+                  <Link
+                    className="mr-3 text-primary-text hover:bg-primary-text hover:text-secondary-text transition-colors duration-300"
+                    href=""
+                  >
+                    <Instagram />
+                  </Link>
+                  <Link
+                    className="mr-3 text-primary-text hover:bg-primary-text hover:text-secondary-text transition-colors duration-300"
+                    href=""
+                  >
+                    <Send />
+                  </Link>
                 </div>
               </div>
             </div>
-            <Nav>
+
+            <Nav className="hidden lg:flex">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/products">Products</NavLink>
               <NavLink href="/users">Customers</NavLink>
@@ -83,7 +76,7 @@ export default function RootLayout({
           </div>
         </div>
 
-        <div className="container my-6">{children}</div>
+        <div className="container px-0">{children}</div>
       </body>
     </html>
   );

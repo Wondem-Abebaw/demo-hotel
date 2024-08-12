@@ -4,10 +4,18 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ComponentProps, ReactNode } from "react";
-
-export function Nav({ children }: { children: ReactNode }) {
+interface NavProps {
+  children: ReactNode;
+  className?: string;
+}
+export function Nav({ children, className }: NavProps) {
   return (
-    <nav className="bg-primary-bg text-secondary-text flex justify-center px-4">
+    <nav
+      className={cn(
+        "bg-primary-bg text-secondary-text flex justify-center px-4",
+        className
+      )}
+    >
       {children}
     </nav>
   );
