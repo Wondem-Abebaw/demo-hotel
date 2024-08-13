@@ -72,7 +72,7 @@
   margin-top: -100px !important;
   z-index: 1;
 }
-/* @keyframes slideInDown {
+@keyframes slideInDown {
   0% {
     transform: translateY(-100%);
     opacity: 0;
@@ -115,4 +115,4 @@
 
 .animate-slideInRight {
   animation: slideInRight 1s ease-out;
-} */
+}
