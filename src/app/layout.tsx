@@ -5,8 +5,15 @@ import { cn } from "@/lib/utils";
 import { Nav, NavLink } from "@/components/Nav";
 
 import { Facebook, Instagram, Mail, Phone, Send } from "lucide-react";
+import {
+  TwitterOutlined,
+  FacebookOutlined,
+  YoutubeOutlined,
+  LinkedinOutlined,
+} from "@ant-design/icons";
 import Link from "next/link";
 import { Header } from "./header";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -69,14 +76,17 @@ export default function RootLayout({
 
             <Nav className="hidden lg:flex">
               <NavLink href="/">Home</NavLink>
-              <NavLink href="/products">Products</NavLink>
-              <NavLink href="/users">Customers</NavLink>
-              <NavLink href="/orders">Sales</NavLink>
+              <NavLink href="/about">About</NavLink>
+              <NavLink href="/rooms">Rooms</NavLink>
+              <NavLink href="/restaurants-foods">Restaurants and Foods</NavLink>
+              <NavLink href="/welness-center">Wellness center</NavLink>
+              <NavLink href="/contact">Contact Us</NavLink>
             </Nav>
           </div>
         </div>
 
         <div className="container px-0">{children}</div>
+        <Footer />
       </body>
     </html>
   );

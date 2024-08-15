@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Menu, Phone, Mail, Send, X } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -41,18 +42,23 @@ export function Header() {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/products" className="block w-full text-primary-text">
-                Products
+              <Link href="/about" className="block w-full text-primary-text">
+                About
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/users" className="block w-full text-primary-text">
-                Customers
+              <Link href="/rooms" className="block w-full text-primary-text">
+                Rooms
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/orders" className="block w-full text-primary-text">
-                Sales
+              <Link href="/services" className="block w-full text-primary-text">
+                Services
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/contact" className="block w-full text-primary-text">
+                Contact Us
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>

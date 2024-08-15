@@ -20,20 +20,22 @@ const Booking: React.FC = () => {
               />
             </div>
             <div>
-              <select className="form-select">
-                <option selected>Adult</option>
-                <option value="1">Adult 1</option>
-                <option value="2">Adult 2</option>
-                <option value="3">Adult 3</option>
-              </select>
+              <input
+                type="number"
+                className="form-input"
+                placeholder="Adults"
+                // defaultValue={1}
+                min={0}
+              />
             </div>
             <div>
-              <select className="form-select">
-                <option selected>Child</option>
-                <option value="1">Child 1</option>
-                <option value="2">Child 2</option>
-                <option value="3">Child 3</option>
-              </select>
+              <input
+                type="number"
+                className="form-input"
+                placeholder="Children"
+                // defaultValue={1}
+                min={0}
+              />
             </div>
             <div>
               <button className="bg-blue-500 text-white w-full py-2  rounded">
