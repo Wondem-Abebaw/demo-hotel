@@ -19,7 +19,7 @@ export function Header() {
   return (
     <div className="bg-primary-bg text-primary-text flex items-center justify-between w-full lg:w-auto p-4">
       <Link href="/" className="flex items-center space-x-2">
-        <h1 className="m-0 uppercase">Hotelier</h1>
+        <h1 className="m-0 uppercase">Demo Hotel</h1>
         <Image
           src=""
           width={50}

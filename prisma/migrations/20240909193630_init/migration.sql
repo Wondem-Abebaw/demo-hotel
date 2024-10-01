@@ -1,0 +1,16 @@
+-- CreateTable
+CREATE TABLE "Room" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "price" DECIMAL(65,30) NOT NULL DEFAULT 200.00,
+    "image" TEXT,
+    "rating" DECIMAL(65,30) DEFAULT 5.00,
+    "bed" INTEGER NOT NULL DEFAULT 1,
+    "bath" INTEGER NOT NULL DEFAULT 1,
+    "wifi" BOOLEAN NOT NULL DEFAULT true,
+    "description" TEXT NOT NULL DEFAULT '',
+    "createdAt" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Room_pkey" PRIMARY KEY ("id")
+);
